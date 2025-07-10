@@ -1,4 +1,4 @@
-# findavote
+# FindaVote
 https://finda.vote
 Find and follow DAO voters who share your perspective 
 
