@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useGetAllPosts } from '../hooks/useQueries';
-import { useFileList } from '../file-storage/FileList';
+import { useFileList } from './FileList';
 import { Grid, List, Calendar, User, X } from 'lucide-react';
-import { Post } from '../backend';
+import { Post } from '../../declarations/findavote_backend/findavote_backend.did';
 
 export default function Find() {
   const { data: posts = [], isLoading } = useGetAllPosts();

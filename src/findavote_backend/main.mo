@@ -1,8 +1,8 @@
-import MultiUserSystem "auth-multi-user/management";
+import MultiUserSystem "./management";
 import OrderedMap "mo:base/OrderedMap";
 import Principal "mo:base/Principal";
-import FileStorage "file-storage/file-storage";
-import Http "file-storage/http";
+import FileStorage "./file-storage";
+import Http "./http";
 import Text "mo:base/Text";
 import Blob "mo:base/Blob";
 import Debug "mo:base/Debug";

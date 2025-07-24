@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useCreatePost, useGetUserPosts, useDeleteUserPost, useUpdatePost } from '../hooks/useQueries';
-import { useFileUpload } from '../file-storage/FileUpload';
-import { useFileList } from '../file-storage/FileList';
+import { useFileUpload } from './FileUpload';
+import { useFileList } from './FileList';
 import { useInternetIdentity } from 'ic-use-internet-identity';
 import { Upload, Image as ImageIcon, Edit, Trash2, Plus, Lock } from 'lucide-react';
-import { Post as PostType } from '../backend';
+import { Post as PostType } from '../../declarations/findavote_backend/findavote_backend.did';
 
 export default function Post() {
   const { identity } = useInternetIdentity();

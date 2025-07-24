@@ -1,4 +1,4 @@
-import Http "http";
+import Http "./http";
 import OrderedMap "mo:base/OrderedMap";
 import Text "mo:base/Text";
 import Blob "mo:base/Blob";

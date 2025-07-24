@@ -1,7 +1,8 @@
 import { useActor } from '../hooks/useActor';
-import { canisterId, FileMetadata } from '../backend';
+import { canisterId } from '../../declarations/findavote_backend';
+import { FileMetadata } from '../../declarations/findavote_backend/findavote_backend.did';
 
-const network = process.env.DFX_NETWORK || (process.env.NODE_ENV === 'production' ? 'ic' : 'local');
+const network = import.meta.env.DFX_NETWORK || (import.meta.env.NODE_ENV === 'production' ? 'ic' : 'local');
 
 async function loadConfig(): Promise<{
     backend_host: string;

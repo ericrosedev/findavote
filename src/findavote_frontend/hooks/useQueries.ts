@@ -2,15 +2,16 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useActor } from './useActor';
 import { useInternetIdentity } from 'ic-use-internet-identity';
 import { Principal } from '@dfinity/principal';
-import { UserProfile, UserInfo, UserRole, ApprovalStatus, Post } from '../backend';
+import { UserProfile, UserInfo, UserRole, ApprovalStatus, Post } from '../../declarations/findavote_backend/findavote_backend.did';
 
 export function useUserProfile() {
   const { actor, isFetching } = useActor();
   return useQuery<UserProfile | null>({
     queryKey: ['userProfile'],
-    queryFn: async () => {
+    queryFn: async (): Promise<UserProfile | null> => {
       if (!actor) return null;
-      return actor.getUserProfile();
+      const result = await actor.getUserProfile();
+      return result.length > 0 ? result[0]! : null;
     },
     enabled: !!actor && !isFetching,
   });
